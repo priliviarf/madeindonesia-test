@@ -11,3 +11,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@layer base {
+  h1 {
+    @apply text-xl text-primary font-semibold mb-1;
+  }
+}
