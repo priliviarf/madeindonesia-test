@@ -105,7 +105,7 @@ export const questions: SurveyQuestionProps[] = [
   {
     no: 6,
     questionKey: "6",
-    text: "What social media channels are you most active on? Choose as many as are applicable.",
+    text: "What social media channels are you most active on?",
     isMultiple: true,
     options: [
       {

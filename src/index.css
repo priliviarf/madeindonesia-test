@@ -14,14 +14,10 @@
 
 @layer base {
   h1 {
-    @apply text-3xl text-primary font-semibold mb-6;
+    @apply text-3xl text-primary font-semibold mb-6 mt-3;
   }
 
   h2 {
     @apply text-2xl text-secondary font-bold mb-6;
-  }
-
-  p {
-    @apply mb-3;
   }
 }
