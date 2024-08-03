@@ -9,7 +9,9 @@ export function SurveyStart() {
   function start() {
     clearSession();
 
-    navigate(paths.survey, { state: { isStart: true } });
+    const deadline = new Date(new Date().valueOf() + 180000);
+
+    navigate(paths.survey, { state: { isStart: true, end: deadline } });
   }
 
   return (

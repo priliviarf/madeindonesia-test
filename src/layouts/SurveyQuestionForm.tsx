@@ -5,6 +5,8 @@ import { useSessionStorage } from "../hooks";
 type SurveyQuestionFormProps = {
   goNext: () => void;
   isEnd: boolean;
+  minutes: number;
+  seconds: number;
 };
 export function SurveyQuestionForm({
   questionKey,
@@ -13,14 +15,20 @@ export function SurveyQuestionForm({
   text,
   options,
   goNext,
+  minutes,
+  seconds,
 }: SurveyQuestionProps & SurveyQuestionFormProps) {
   const [answer, setAnswer] = useSessionStorage(questionKey, "");
 
   return (
     <>
       <Card isQuestionList className="flex flex-col">
-        <div className="flex-grow-0 flex-shrink-0">
-          <h2>Q{no}</h2>
+        <div className="flex-grow-0 flex-shrink-0 flex justify-between align-middle">
+          <h2>Q{no}</h2>{" "}
+          <p>
+            {minutes < 10 ? "0" + minutes : minutes}:
+            {seconds < 10 ? "0" + seconds : seconds}
+          </p>
         </div>
         <div className="flex-1 md:block flex flex-col justify-center pb-9">
           <p className="font-medium text-primary-hover pt-3">{text}</p>
