@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 
-export function useSessionStorage(key: string, defaultValue: any) {
+export function useSessionStorage(
+  key: string,
+  defaultValue: string | Function
+) {
   const [value, setValue] = useState(() => {
     const jsonValue = window.sessionStorage.getItem(key);
     if (jsonValue != null) return JSON.parse(jsonValue);

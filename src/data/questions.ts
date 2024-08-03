@@ -1,7 +1,15 @@
-export const surveyQuestions = [
+export type SurveyQuestionProps = {
+  questionKey: string;
+  no: number;
+  text: string;
+  isMultiple?: boolean | undefined;
+  options: { value: string; text: string }[];
+};
+
+export const questions: SurveyQuestionProps[] = [
   {
     no: 1,
-    key: "1",
+    questionKey: "1",
     text: "How often have you come across this product online?",
     options: [
       {
@@ -20,7 +28,7 @@ export const surveyQuestions = [
   },
   {
     no: 2,
-    key: "2",
+    questionKey: "2",
     text: "What is your favorite product within this industry?",
     options: [
       {
@@ -39,7 +47,7 @@ export const surveyQuestions = [
   },
   {
     no: 3,
-    key: "3",
+    questionKey: "3",
     text: "How likely are you to buy a product recommended online?",
     options: [
       {
@@ -58,7 +66,7 @@ export const surveyQuestions = [
   },
   {
     no: 4,
-    key: "4",
+    questionKey: "4",
     text: "How likely are you to recommend a product to your online community?",
     options: [
       {
@@ -77,7 +85,7 @@ export const surveyQuestions = [
   },
   {
     no: 5,
-    key: "5",
+    questionKey: "5",
     text: "To what extent does a brand’s social media presence influence your purchasing decision?",
     options: [
       {
@@ -96,7 +104,7 @@ export const surveyQuestions = [
   },
   {
     no: 6,
-    key: "6",
+    questionKey: "6",
     text: "What social media channels are you most active on? Choose as many as are applicable.",
     isMultiple: true,
     options: [
@@ -116,7 +124,7 @@ export const surveyQuestions = [
   },
   {
     no: 7,
-    key: "7",
+    questionKey: "7",
     text: "How many hours do you spend on social media every day?",
     options: [
       {
@@ -135,7 +143,7 @@ export const surveyQuestions = [
   },
   {
     no: 8,
-    key: "8",
+    questionKey: "8",
     text: "To what extent does social conversations influence your product choices?",
     options: [
       {
@@ -154,7 +162,7 @@ export const surveyQuestions = [
   },
   {
     no: 9,
-    key: "9",
+    questionKey: "9",
     text: "How old are you?",
     options: [
       {
@@ -173,7 +181,7 @@ export const surveyQuestions = [
   },
   {
     no: 10,
-    key: "10",
+    questionKey: "10",
     text: "Kindly indicate your employment status?",
     options: [
       {

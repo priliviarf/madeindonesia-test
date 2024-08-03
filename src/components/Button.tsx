@@ -10,6 +10,11 @@ export const buttonStyles = cva(
       variant: {
         default: ["bg-primary", "hover:bg-primary-hover", "text-white"],
         ghost: ["bg-white hover:bg-gray-100"],
+        disabled: [
+          "bg-primary-disabled",
+          "cursor-not-allowed",
+          "text-gray-700",
+        ],
       },
     },
     defaultVariants: {
@@ -17,7 +22,7 @@ export const buttonStyles = cva(
     },
   }
 );
-// const bu = <button className="rounded-full font-"></button>;
+// const bu = <button className="rounded-full text-gray-700"></button>;
 
 type ButtonProps = VariantProps<typeof buttonStyles> & ComponentProps<"button">;
 export function Button({ className, variant, ...props }: ButtonProps) {
