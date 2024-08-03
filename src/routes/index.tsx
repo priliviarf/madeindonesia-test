@@ -1,6 +1,7 @@
-import { Link, useRoutes } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 import { SurveyEnd, SurveyQuestion, SurveyStart } from "../layouts";
 import { paths } from "./paths";
+import { NotFound } from "../components";
 
 function SurveyRoutes() {
   const ro = useRoutes([
@@ -15,11 +16,7 @@ function SurveyRoutes() {
     { path: paths.end, element: <SurveyEnd /> },
     {
       path: "*",
-      element: (
-        <div>
-          May be you're lost. <Link to="/">go back</Link>
-        </div>
-      ),
+      element: <NotFound />,
     },
   ]);
 
