@@ -4,14 +4,16 @@ import { SyntheticEvent, useEffect, useRef, useState } from "react";
 import { BarStatus } from "../components";
 import { questions } from "../data/questions";
 import { SurveyQuestionForm } from "./SurveyQuestionForm";
+import { useSessionStorage } from "../hooks";
 
 export function SurveyQuestion() {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  const [count, setCount] = useState(0);
-  const isEnd = count + 1 >= questions.length;
-  const currentQuestionKey = count + 1;
+  const [currentQ, setCurrentQ] = useSessionStorage("currentQ", 0);
+
+  const isEnd = currentQ + 1 >= questions.length;
+  const currentQuestionKey = currentQ + 1;
 
   const timerRef = useRef(0);
   const [stop, setStop] = useState(false);
@@ -91,7 +93,7 @@ export function SurveyQuestion() {
 
   function nextQuestion() {
     if (true) {
-      setCount((prevCount) => prevCount + 1);
+      setCurrentQ(currentQ + 1);
     }
   }
 }

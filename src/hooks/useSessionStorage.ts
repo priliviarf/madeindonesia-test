@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 
 export function useSessionStorage(
   key: string,
-  defaultValue: string | Function
+  defaultValue: string | Function | number
 ) {
   const [value, setValue] = useState(() => {
     const jsonValue = window.sessionStorage.getItem(key);
