@@ -1,5 +1,5 @@
 import { Link, useRoutes } from "react-router-dom";
-import { SurveyQuestion, SurveyStart } from "../layouts";
+import { SurveyEnd, SurveyQuestion, SurveyStart } from "../layouts";
 import { paths } from "./paths";
 
 function SurveyRoutes() {
@@ -12,7 +12,7 @@ function SurveyRoutes() {
       path: paths.survey,
       element: <SurveyQuestion />,
     },
-    { path: paths.end, element: <div>Thank you survey is end</div> },
+    { path: paths.end, element: <SurveyEnd /> },
     {
       path: "*",
       element: (

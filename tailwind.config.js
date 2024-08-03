@@ -7,12 +7,15 @@ export default {
         primary: {
           DEFAULT: "#645aa0",
           light: "#dcd2eb",
+          hover: "#574b9f",
+          active: "#7c67ea",
+          disabled: "#c7baeb",
         },
         secondary: {
-          DEFAULT: "#f0aaa5",
+          DEFAULT: "#e0dceb",
         },
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

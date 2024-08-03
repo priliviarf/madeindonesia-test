@@ -8,7 +8,7 @@ export const buttonStyles = cva(
   {
     variants: {
       variant: {
-        default: ["bg-primary", "hover:bg-primary-light", "text-white"],
+        default: ["bg-primary", "hover:bg-primary-hover", "text-white"],
         ghost: ["bg-white hover:bg-gray-100"],
       },
     },
@@ -32,9 +32,11 @@ export function Button({ className, variant, ...props }: ButtonProps) {
 type ButtonLinkProps = VariantProps<typeof buttonStyles> & LinkProps;
 export function ButtonLink({ className, variant, ...props }: ButtonLinkProps) {
   return (
-    <Link
-      {...props}
-      className={twMerge(buttonStyles({ variant }), className)}
-    />
+    <div className="py-3">
+      <Link
+        {...props}
+        className={twMerge(buttonStyles({ variant }), className)}
+      />
+    </div>
   );
 }
