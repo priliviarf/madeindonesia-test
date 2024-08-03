@@ -13,7 +13,7 @@ export const buttonStyles = cva(
         disabled: [
           "bg-primary-disabled",
           "cursor-not-allowed",
-          "text-gray-700",
+          "text-gray-600",
         ],
       },
     },

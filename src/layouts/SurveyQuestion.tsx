@@ -1,10 +1,9 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { paths } from "../routes/paths";
 import { SyntheticEvent, useEffect, useState } from "react";
-import { BarStatus, Button } from "../components";
+import { BarStatus } from "../components";
 import { questions } from "../data/questions";
 import { SurveyQuestionForm } from "./SurveyQuestionForm";
-// import { useSessionStorage } from "../hooks";
 
 export function SurveyQuestion() {
   const { state } = useLocation();
@@ -42,26 +41,16 @@ export function SurveyQuestion() {
           ))}
         </div>
 
-        {questions.map((question) => (
-          <SurveyQuestionForm
-            key={question.questionKey}
-            {...question}
-            current={currentQuestionKey}
-          />
-        ))}
-
-        <div className={`pt-3 ${isEnd ? "hidden" : ""}`}>
-          <Button
-            variant={true ? "default" : "disabled"}
-            onClick={nextQuestion}
-            type="button"
-          >
-            Next
-          </Button>
-        </div>
-        <div className={`pt-3 ${isEnd ? "" : "hidden"}`}>
-          <Button type="submit">Submit</Button>
-        </div>
+        {questions.map((question) =>
+          question.no === currentQuestionKey ? (
+            <SurveyQuestionForm
+              key={question.questionKey}
+              {...question}
+              goNext={nextQuestion}
+              isEnd={isEnd}
+            />
+          ) : null
+        )}
       </form>
     </>
   );

@@ -2,12 +2,20 @@ export type OptionProps = {
   text: string;
   value: string;
   questionKey: string;
+  checked?: boolean;
   onChange: (e: string) => void;
 };
-export function Options({ text, value, onChange, questionKey }: OptionProps) {
+export function Options({
+  checked,
+  text,
+  value,
+  onChange,
+  questionKey,
+}: OptionProps) {
   return (
     <div className="flex items-center gap-x-3">
       <input
+        checked={checked}
         id={`${questionKey}${value}`}
         className="h-4 w-4 border-gray-300 text-primary focus:ring-primary-hover"
         name={`${questionKey}`}

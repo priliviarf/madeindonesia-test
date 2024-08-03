@@ -13,6 +13,7 @@ export default {
         },
         secondary: {
           DEFAULT: "#e0dceb",
+          yellow: "#f0aaa5",
         },
       },
     },
